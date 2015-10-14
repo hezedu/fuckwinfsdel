@@ -1,0 +1,31 @@
+{
+  "name": "fuckwinfsdel",
+  "version": "0.0.1",
+  "main": "index",
+  "bin": {
+    "fuckwinfsdel": "index.js"
+  },
+  "keywords": [
+    "win",
+    "fs",
+    "delete",
+    "win files delete"
+  ],
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hezedu/fuckwinfsdel.git"
+  },
+  "author": {
+    "name": "hezedu"
+  },
+  "dependencies": {
+    "sas": "^2.0.11"
+  },
+  "licenses": "MIT",
+  "email": "hezedu@hotmail.com",
+  "description": "Async for node and the browser . can be recursively callback",
+  "bugs": {
+    "url": "https://github.com/hezedu/fuckwinfsdel/issues"
+  }
+}
