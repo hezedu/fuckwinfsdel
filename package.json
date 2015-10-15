@@ -1,6 +1,6 @@
 {
   "name": "fuckwinfsdel",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "index",
   "bin": {
     "fuckwinfsdel": "index.js"
@@ -11,10 +11,9 @@
     "delete",
     "win files delete"
   ],
-
   "repository": {
     "type": "git",
-    "url": "https://github.com/hezedu/fuckwinfsdel.git"
+    "url": "git+https://github.com/hezedu/fuckwinfsdel.git"
   },
   "author": {
     "name": "hezedu"
@@ -27,5 +26,13 @@
   "description": "Async for node and the browser . can be recursively callback",
   "bugs": {
     "url": "https://github.com/hezedu/fuckwinfsdel/issues"
-  }
+  },
+  "readme": "# fuckwinfsdel\n",
+  "readmeFilename": "README.md",
+  "gitHead": "e6adc9f281795a5d225136dd43eef52bcb4ff0c2",
+  "homepage": "https://github.com/hezedu/fuckwinfsdel#readme",
+  "_id": "fuckwinfsdel@0.0.1",
+  "scripts": {},
+  "_shasum": "bda30d70febc9e3cade59d2c447437330d998705",
+  "_from": "fuckwinfsdel@*"
 }

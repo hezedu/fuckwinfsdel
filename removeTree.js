@@ -3,9 +3,9 @@ var fs = require('fs');
 var path = require('path');
 
 
-function removeTree(dir) {
+function removeTree(dir, callback) {
 
-  var from = dir ; //根目录.
+  var from = dir; //根目录.
   //var from = __dirname + '/test'; //根目录.
 
 
@@ -28,7 +28,7 @@ function removeTree(dir) {
     fs.readdir(fspath, function(err, files) {
       if (err) { //一些奇怪的文件夹
         console.error('read_dir Err', err);
-        return cb("$STOP",err);
+        return cb("$STOP", err);
       }
       var obj = {};
       var len = files.length;
@@ -97,20 +97,22 @@ function removeTree(dir) {
   var time = Date.now();
   sas([read_dir], {
     iterator: _stat,
-    process:function(c1,c2){
-      
+    process: function(c1, c2) {
+
       process.stdout.cursorTo(0)
       process.stdout.clearLine(1);
-      process.stdout.write(c2+'/'+c1)
-      //process.stdout.resume(c1+'/'+c2)
+      process.stdout.write(c2 + '/' + c1)
+        //process.stdout.resume(c1+'/'+c2)
     },
     allEnd: function(err) {
-      if(err){
+      if (err) {
         console.log('\n删除失败');
-      }else{
-        console.log('\n已删除.用时: ',Date.now() - time);
+      } else {
+        console.log('\n已删除.用时: ', Date.now() - time);
       }
-      
+      if (callback) {
+        callback();
+      }
     }
   });
 }

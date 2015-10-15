@@ -1,18 +1,38 @@
 #!/usr/bin/env node
+
 var path = require("path");
-  fs = require("fs");
-  args = process.argv.slice(1);
-  sas = require('sas');
+var fs = require("fs");
+var args = process.argv.slice(1);
+var removeTree = require('./removeTree'); //Just a sas's demo.
 
 
-console.log('args ',args)
-console.log('path.basename(arg) ',path.basename(arg))
+var param = args[1];
 
-do arg = args.shift();
-while ( fs.realpathSync(arg) !== __filename
-  && !(base = path.basename(arg)).match(/^index.js$/)
-){
-
+if (param) {
+  if (param.substr(0, 2) === './') {
+    param = process.cwd() + param.substr(1);
+  } else if (param[0] !== '/' || param[0] !== '\\') {
+    param = process.cwd() + '/' + param;
+  }
 }
-console.log(args)
-//require.resolve("../sas/demo/removeTree.js")(args)
+
+process.stdout.write('确定要删除:\u001b[91m' + param + '\u001b[39m 么? [y/n]: ');
+
+process.stdin.setEncoding('utf8');
+
+process.stdin.on('readable', function() {
+
+  var chunk = process.stdin.read();
+  if (chunk !== null) {
+    chunk = chunk.toLowerCase();
+    chunk = chunk.trim();
+    if (chunk === 'y') {
+      removeTree(param, function() {
+        process.stdin.end();
+      });
+    } else {
+      //console.log('取消删除');
+      process.stdin.end();
+    }
+  }
+})
