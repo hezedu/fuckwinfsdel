@@ -4,17 +4,21 @@ var path = require("path");
 var fs = require("fs");
 var args = process.argv.slice(1);
 var removeTree = require('./removeTree'); //Just a sas's demo.
+var path = require('path')
 
+args.shift();
+var param = args.join(' ');
+param = path.resolve(param);
 
-var param = args[1];
+/*if (param) {
+  if(path.isAbsolute(param)){
 
-if (param) {
-  if (param.substr(0, 2) === './') {
+  }else if (param.substr(0, 2) === './') {
     param = process.cwd() + param.substr(1);
   } else if (param[0] !== '/' || param[0] !== '\\') {
     param = process.cwd() + '/' + param;
   }
-}
+}*/
 
 process.stdout.write('确定要删除:\u001b[91m' + param + '\u001b[39m 么? [y/n]: ');
 

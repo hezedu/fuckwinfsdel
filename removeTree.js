@@ -7,7 +7,7 @@ function removeTree(dir, callback) {
 
   var from = dir; //根目录.
   //var from = __dirname + '/test'; //根目录.
-
+  var deep = 0
 
   function _rmdir(fspath) {
     return function(cb) {
@@ -25,6 +25,12 @@ function removeTree(dir, callback) {
   function read_dir(cb, t) {
     var t_fspath = t.fspath(); //t.fspath()=返回过滤掉t.path里数字的一个新数组。
     var fspath = t_fspath.join('') ? from + t_fspath.join('') : from;
+
+
+  if (t_fspath.length > deep) {
+    deep = t_fspath.length; //记录最深点
+  }
+
     fs.readdir(fspath, function(err, files) {
       if (err) { //一些奇怪的文件夹
         console.error('read_dir Err', err);
@@ -100,7 +106,7 @@ function removeTree(dir, callback) {
     process: function(c1, c2) {
 
       process.stdout.cursorTo(0)
-      process.stdout.clearLine(1);
+      //process.stdout.clearLine(1);
       process.stdout.write(c2 + '/' + c1)
         //process.stdout.resume(c1+'/'+c2)
     },
@@ -108,7 +114,7 @@ function removeTree(dir, callback) {
       if (err) {
         console.log('\n删除失败');
       } else {
-        console.log('\n已删除.用时: ', Date.now() - time);
+        console.log('\n已删除.最深达 \u001b[96m'+deep+'\u001b[39m 层.用时:', (Date.now() - time)+'ms');
       }
       if (callback) {
         callback();

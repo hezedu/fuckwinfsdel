@@ -1,6 +1,6 @@
 {
   "name": "fuckwinfsdel",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "index",
   "bin": {
     "fuckwinfsdel": "index.js"
@@ -23,7 +23,7 @@
   },
   "licenses": "MIT",
   "email": "hezedu@hotmail.com",
-  "description": "Async for node and the browser . can be recursively callback",
+  "description": "解决win下文件目录太长无法删除的问题",
   "bugs": {
     "url": "https://github.com/hezedu/fuckwinfsdel/issues"
   },
@@ -31,8 +31,8 @@
   "readmeFilename": "README.md",
   "gitHead": "e6adc9f281795a5d225136dd43eef52bcb4ff0c2",
   "homepage": "https://github.com/hezedu/fuckwinfsdel#readme",
-  "_id": "fuckwinfsdel@0.0.1",
+  "_id": "fuckwinfsdel@0.0.3",
   "scripts": {},
-  "_shasum": "bda30d70febc9e3cade59d2c447437330d998705",
-  "_from": "fuckwinfsdel@*"
+  "_shasum": "2e696223e1cbcae52aed31b391f87419eb5e2bf0",
+  "_from": "fuckwinfsdel@0.0.3"
 }
