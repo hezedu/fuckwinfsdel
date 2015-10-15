@@ -6,4 +6,7 @@
 `fuckwinfsdel youdir`
 ##例
 `fuckwinfsdel node_modules` 将会删除当前目录下 node_modules 文件夹。
-`fuckwinfsdel D:\expressgit\node_modules` 将会删除D:\expressgit\node_modules文件夹。
+```
+fuckwinfsdel D:\expressgit\node_modules
+``` 
+将会删除D:\expressgit\node_modules文件夹。
