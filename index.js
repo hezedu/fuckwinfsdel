@@ -32,11 +32,11 @@ process.stdin.on('readable', function() {
     chunk = chunk.trim();
     if (chunk === 'y') {
       removeTree(param, function() {
-        process.stdin.end();
+        //process.stdin.end();
       });
-    } else {
+    }
       //console.log('取消删除');
       process.stdin.end();
-    }
+
   }
 })
