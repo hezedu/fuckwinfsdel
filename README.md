@@ -1,10 +1,14 @@
 # fuckwinfsdel
 无论多深的目录都能删除。全异步操作，性能刚刚的。
 
-安装：`npm install fuckwinfsdel -g`
-##API(cli):
+###安装
+`npm install fuckwinfsdel -g`
+
+###使用
 `fuckwinfsdel youdir`
-##例:
+
+###例
+
 ```
 fuckwinfsdel node_modules
 ```
