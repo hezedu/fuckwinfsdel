@@ -1,5 +1,5 @@
 # fuckwinfsdel
-无论多深的目录都能删除。全异步操作，性能刚刚的。
+无论多深的目录都能删除。全异步操作，非常快。
 
 ###安装
 `npm install fuckwinfsdel -g`
