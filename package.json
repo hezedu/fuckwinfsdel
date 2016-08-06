@@ -1,6 +1,6 @@
 {
   "name": "fuckwinfsdel",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "main": "index",
   "bin": {
     "fuckwinfsdel": "index.js"
@@ -19,7 +19,7 @@
     "name": "hezedu"
   },
   "dependencies": {
-    "sas": "^2.0.11"
+    "sas": "^2.0.13"
   },
   "licenses": "MIT",
   "email": "hezedu@hotmail.com",
