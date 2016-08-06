@@ -72,7 +72,7 @@ function removeTree(dir, callback) {
   }
   console.log('正在删除...');
   var time = Date.now();
-  sas([read_dir], {
+  sas(dir, {
     iterator: _stat,
     process: function(c1, c2) {
       process.stdout.cursorTo(0);
