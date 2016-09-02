@@ -54,9 +54,9 @@ function removeTree(dir, callback) {
           _errHandle('lstat', err);
           return cb();
         }
-        if (stat.isSymbolicLink()) { //linux 软链接
+/*        if (stat.isSymbolicLink()) { //链接
           return cb();
-        }
+        }*/
         if (stat.isDirectory()) {
           return cb('$RELOAD', [read_dir]);
         } else {
