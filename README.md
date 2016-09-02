@@ -3,20 +3,29 @@
 
 [Switch to English README](README-en.md)
 ###安装
-`npm install fuckwinfsdel -g`
+CLI: `npm install fuckwinfsdel -g`
 
-###使用
+`npm install fuckwinfsdel`
+
+##使用(命令行)
 `fuckwinfsdel youdir`
 
 ###例
 
-```
-fuckwinfsdel node_modules
-```
+`fuckwinfsdel node_modules`
 将会删除当前目录下 node_modules 文件夹。
-```
-fuckwinfsdel D:\expressgit\node_modules
-```
+
+`fuckwinfsdel D:\expressgit\node_modules`
+
 将会删除D:\expressgit\node_modules文件夹。
+##API
+### fuckwinfsdel(dir, callback)
 
+###例
+```js
+var del = require('fuckwinfsdel');
 
+del('./dist', function(){
+  console.log('end', arguments);
+});
+```
