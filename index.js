@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-var fs = require("fs");
 var args = process.argv.slice(1);
 var removeTree = require('./removeTree'); //Just a sas's demo.
 
@@ -17,7 +16,20 @@ process.stdin.on('readable', function() {
     chunk = chunk.toLowerCase();
     chunk = chunk.trim();
     if (chunk === 'y') {
-      removeTree(param, function() {
+      removeTree(param, {processLog: true}, function(err, result) {
+        if (err) {
+          console.error('\n删除失败');
+        } else {
+          var msg = '\n';
+          var errCount = result.errCount;
+          if(errCount){
+            msg += '结束, 共有\u001b[91m' + errCount + '\u001b[39m个文件删除失败,请关闭其它可能占用该文件夹的程序再试.\n';
+          }else{
+            msg += '删除成功。';
+          }
+          msg += '最深达 \u001b[96m' + result.deep + '\u001b[39m 层.用时:' + result.timeCount + 'ms';
+          console.log(msg);
+        }
         //process.stdin.end();
       });
     }

@@ -2,10 +2,28 @@ var sas = require('sas');
 var fs = require('fs');
 var path = require('path');
 
-function removeTree(dir, callback) {
+function processLog(c1, c2) {
+  process.stdout.cursorTo(0);
+  process.stdout.write('\u001b[93m' + c2 + '/' + c1 + '\u001b[39m');
+}
+
+function removeTree(dir, opts, callback) {
   dir = path.resolve(dir); //根目录.
   var deep = 0; //深度计数
   var errCount = 0; //未能删除文件数
+  if(typeof opts === 'function') {
+    callback = opts;
+    opts = {};
+  }else{
+    callback = callback || function(){}
+  }
+
+  var sasProcessLog = null;
+if(opts.process){
+    sasProcessLog = opts.process
+  }else if(opts.processLog){
+    sasProcessLog = processLog
+  }
 
   function _errHandle(name, err){
     console.error(name, err.name, err.message);
@@ -74,27 +92,36 @@ function removeTree(dir, callback) {
   var time = Date.now();
   sas(dir, {
     iterator: _stat,
-    process: function(c1, c2) {
-      process.stdout.cursorTo(0);
-      process.stdout.write('\u001b[93m' + c2 + '/' + c1 + '\u001b[39m');
-    },
+    process: sasProcessLog,
     allEnd: function(err) {
       if (err) {
-        console.error('\n删除失败');
+        return callback(err);
       } else {
-        var msg = '\n';
-        if(errCount){
-          msg += '结束, 共有\u001b[91m' + errCount + '\u001b[39m个文件删除失败,请关闭其它可能占用该文件夹的程序再试.\n';
-        }else{
-          msg += '删除成功。';
-        }
-        msg += '最深达 \u001b[96m' + deep + '\u001b[39m 层.用时:' + (Date.now() - time) + 'ms';
-        console.log(msg);
-      }
-      if (callback) {
-        callback();
+        callback(null, {
+          errCount: errCount,
+          deep:deep,
+          timeCount: (Date.now() - time)
+        });
       }
     }
   });
 }
+
+//test
+// removeTree('D:/duwei/git/sas/demo/data/mkTree', {processLog: true}, function(err, result) {
+//   if (err) {
+//     console.error('\n删除失败');
+//   } else {
+//     var msg = '\n';
+//     var errCount = result.errCount;
+//     if(errCount){
+//       msg += '结束, 共有\u001b[91m' + errCount + '\u001b[39m个文件删除失败,请关闭其它可能占用该文件夹的程序再试.\n';
+//     }else{
+//       msg += '删除成功。';
+//     }
+//     msg += '最深达 \u001b[96m' + result.deep + '\u001b[39m 层.用时:' + result.timeCount + 'ms';
+//     console.log(msg);
+//   }
+//   //process.stdin.end();
+// });
 module.exports = removeTree;

@@ -19,12 +19,32 @@ Will delete D:\expressgit\node_modules folder.
 
 ##API
 ### fuckwinfsdel(dir, callback)
+### fuckwinfsdel(dir, opts, callback)
+
 ###example
 ```js
 var del = require('fuckwinfsdel');
 
-del('./dist', function(){
-  console.log('end', arguments);
+del('./dist', function(err, result){
+  if(err){
+    return console.log(err);
+  }
+  console.log('end', result);
+  /*
+  result:
+    timeCount: time count ms
+    errCount: error count 
+    deep: files' deep
+  */
 });
+
+//or 
+
+del('./dist', {
+    processLog : true // default false , if true, it will log on process.
+  },
+  function(err, result){
+
+  });
 ```
 

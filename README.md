@@ -18,14 +18,34 @@ CLI: `npm install fuckwinfsdel -g`
 `fuckwinfsdel D:\expressgit\node_modules`
 
 将会删除D:\expressgit\node_modules文件夹。
+
 ##API
 ### fuckwinfsdel(dir, callback)
+### fuckwinfsdel(dir, opts, callback)
 
 ###例
 ```js
 var del = require('fuckwinfsdel');
 
-del('./dist', function(){
-  console.log('end', arguments);
+del('./dist', function(err, result){
+  if(err){
+    return console.log(err);
+  }
+  console.log('end', result);
+  /*
+  result:
+    timeCount: 耗时 ms
+    errCount: 错误数
+    deep: files'深度
+  */
 });
+
+//or
+
+del('./dist', {
+    processLog : true // default false , if true, it will log on process.
+  },
+  function(err, result){
+
+  });
 ```
