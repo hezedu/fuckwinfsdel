@@ -34,7 +34,6 @@ del('./dist', function(err, result){
   console.log('end', result);
   /*
   result:
-    timeCount: 耗时 ms
     errCount: 错误数
     deep: files'深度
   */
@@ -43,7 +42,7 @@ del('./dist', function(err, result){
 //or
 
 del('./dist', {
-    processLog : true // default false , if true, it will log on process.
+    processLog : true // default false , if true, it will log tasks Number and error on process.
   },
   function(err, result){
 

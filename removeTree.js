@@ -26,7 +26,7 @@ if(opts.process){
   }
 
   function _errHandle(name, err){
-    console.error(name, err.name, err.message);
+    opts.processLog && console.error(name, err.name, err.message);
     errCount = errCount + 1;
   }
   function _rmdir(fspath) {
@@ -88,7 +88,6 @@ if(opts.process){
       });
     }
   }
-  console.log('正在删除...');
   var time = Date.now();
   sas(dir, {
     iterator: _stat,
@@ -99,8 +98,7 @@ if(opts.process){
       } else {
         callback(null, {
           errCount: errCount,
-          deep:deep,
-          timeCount: (Date.now() - time)
+          deep:deep
         });
       }
     }

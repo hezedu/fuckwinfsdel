@@ -16,6 +16,9 @@ process.stdin.on('readable', function() {
     chunk = chunk.toLowerCase();
     chunk = chunk.trim();
     if (chunk === 'y') {
+      
+      console.log('正在删除...');
+      var time = Date.now();
       removeTree(param, {processLog: true}, function(err, result) {
         if (err) {
           console.error('\n删除失败');
@@ -27,7 +30,7 @@ process.stdin.on('readable', function() {
           }else{
             msg += '删除成功。';
           }
-          msg += '最深达 \u001b[96m' + result.deep + '\u001b[39m 层.用时:' + result.timeCount + 'ms';
+          msg += '最深达 \u001b[96m' + result.deep + '\u001b[39m 层.用时:' + (Date.now() - time) + 'ms';
           console.log(msg);
         }
         //process.stdin.end();
