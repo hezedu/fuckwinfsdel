@@ -1,5 +1,7 @@
 # fuckwinfsdel
-无论多深的目录都能删除。全异步操作，非常快, 可用于window, linux.
+无论多深的目录都能删除。全异步操作，非常快。
+
+可用于window, linux。
 
 [Switch to English README](README-en.md)
 ###安装
