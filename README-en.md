@@ -3,9 +3,11 @@ No matter how deep the directory, It can be async's delete all.
 
 Can be used for Window, Linux.
 ###install
-CLI:`npm install fuckwinfsdel -g`
+CLI(global):`npm install fuckwinfsdel -g`
 
-`npm install fuckwinfsdel`
+or 
+
+API(local)`npm install fuckwinfsdel`
 
 ##use(CLI)
 `fuckwinfsdel youdir`
