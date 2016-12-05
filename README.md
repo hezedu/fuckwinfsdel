@@ -7,6 +7,8 @@
 ###安装
 CLI(global): `npm install fuckwinfsdel -g`
 
+或者
+
 API(local): `npm install fuckwinfsdel`
 
 ##使用(命令行)
