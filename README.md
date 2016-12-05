@@ -5,9 +5,9 @@
 
 [Switch to English README](README-en.md)
 ###安装
-CLI: `npm install fuckwinfsdel -g`
+CLI(global): `npm install fuckwinfsdel -g`
 
-`npm install fuckwinfsdel`
+API(local): `npm install fuckwinfsdel`
 
 ##使用(命令行)
 `fuckwinfsdel youdir`
