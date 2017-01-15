@@ -1,6 +1,7 @@
 # fuckwinfsdel
 No matter how deep the directory, It can be async's delete all.
 ![image](https://github.com/hezedu/SomethingBoring/blob/master/fuckwinfsdel.gif?raw=true)
+
 For Windows developers. Aslo Can be used Linux, Mac.
 ###install
 CLI(global):`npm install fuckwinfsdel -g`
