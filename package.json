@@ -1,15 +1,15 @@
 {
   "name": "fuckwinfsdel",
-  "version": "1.2.1",
+  "version": "2.0.0",
   "main": "removeTree",
   "bin": {
     "fuckwinfsdel": "index.js"
   },
   "keywords": [
-    "win",
+    "windows",
     "fs",
-    "delete",
-    "win files delete"
+    "long files or folders",
+    "delete"
   ],
   "repository": {
     "type": "git",
@@ -34,5 +34,6 @@
   "_id": "fuckwinfsdel@0.0.3",
   "scripts": {},
   "_shasum": "2e696223e1cbcae52aed31b391f87419eb5e2bf0",
-  "_from": "fuckwinfsdel@0.0.3"
+  "_from": "fuckwinfsdel@1.2.1",
+  "_resolved": "http://registry.npm.taobao.org/fuckwinfsdel/download/fuckwinfsdel-1.2.1.tgz"
 }

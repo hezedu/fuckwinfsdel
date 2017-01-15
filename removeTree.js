@@ -2,11 +2,6 @@ var sas = require('sas');
 var fs = require('fs');
 var path = require('path');
 
-function processLog(c1, c2) {
-  process.stdout.cursorTo(0);
-  process.stdout.write('\u001b[93m' + c2 + '/' + c1 + '\u001b[39m');
-}
-
 function removeTree(dir, opts, callback) {
   dir = path.resolve(dir); //根目录.
   var deep = 0; //深度计数
@@ -17,18 +12,14 @@ function removeTree(dir, opts, callback) {
   }else{
     callback = callback || function(){}
   }
-
-  var sasProcessLog = null;
-if(opts.process){
-    sasProcessLog = opts.process
-  }else if(opts.processLog){
-    sasProcessLog = processLog
-  }
-
+  
+  var sasProcessLog = opts.process;
+  opts.onFail = opts.onFail || function(){}
   function _errHandle(name, err){
-    opts.processLog && console.error(name, err.name, err.message);
+    opts.onFail(name, err);
     errCount = errCount + 1;
   }
+  
   function _rmdir(fspath) {
     return function(cb) {
       fs.rmdir(fspath, function(err, result) {

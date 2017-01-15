@@ -1,33 +1,30 @@
 # fuckwinfsdel
-无论多深的目录都能删除。全异步操作，非常快。
+No matter how deep the directory, It can be async's delete all.
 
-可用于window, linux。
+For Windows developers. Aslo Can be used Linux, Mac.
+###install
+CLI(global):`npm install fuckwinfsdel -g`
 
-[Switch to English README](README-en.md)
-###安装
-CLI(global): `npm install fuckwinfsdel -g`
+or 
 
-或者
+API(local)`npm install fuckwinfsdel`
 
-API(local): `npm install fuckwinfsdel`
-
-##使用(命令行)
+##use(CLI)
 `fuckwinfsdel youdir`
 
-###例
+###example
 
 `fuckwinfsdel node_modules`
-将会删除当前目录下 node_modules 文件夹。
-
+Will delete current directory's node_modules folder.
+Will delete node_modules folder.
 `fuckwinfsdel D:\expressgit\node_modules`
-
-将会删除D:\expressgit\node_modules文件夹。
+Will delete D:\expressgit\node_modules folder.
 
 ##API
 ### fuckwinfsdel(dir, callback)
 ### fuckwinfsdel(dir, opts, callback)
 
-###例
+###example
 ```js
 var del = require('fuckwinfsdel');
 
@@ -38,15 +35,24 @@ del('./dist', function(err, result){
   console.log('end', result);
   /*
   result:
-    errCount: 错误数
-    deep: files'深度
+    errCount: error count 
+    deep: files' deep
   */
 });
-
-//or
+```
+opts:`process`,`onFail`.
+###full state example
+```js
+//or 
 
 del('./dist', {
-    processLog : true // default false , if true, it will log tasks Number and error on process.
+    process : function(count1, count2){
+      process.stdout.cursorTo(0);
+      process.stdout.write('\u001b[93m' + count1 + '/' + count2 + '\u001b[39m');
+    },
+    onFail: function(method, err){
+      console.error(method, err);
+    }
   },
   function(err, result){
 
