@@ -17,7 +17,7 @@ API(local)`npm install fuckwinfsdel`
 
 `fuckwinfsdel node_modules`
 Will delete current directory's node_modules folder.
-Will delete node_modules folder.
+
 `fuckwinfsdel D:\expressgit\node_modules`
 Will delete D:\expressgit\node_modules folder.
 
