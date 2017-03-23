@@ -3,17 +3,17 @@ No matter how deep the directory, It can be async's delete all.
 ![image](https://github.com/hezedu/SomethingBoring/blob/master/fuckwinfsdel.gif?raw=true)
 
 For Windows developers. Aslo Can be used Linux, Mac.
-###install
+### install
 CLI(global):`npm install fuckwinfsdel -g`
 
 or 
 
 API(local)`npm install fuckwinfsdel`
 
-##use(CLI)
+## use(CLI)
 `fuckwinfsdel youdir`
 
-###example
+### example
 
 `fuckwinfsdel node_modules`
 Will delete current directory's node_modules folder.
@@ -21,11 +21,11 @@ Will delete current directory's node_modules folder.
 `fuckwinfsdel D:\expressgit\node_modules`
 Will delete D:\expressgit\node_modules folder.
 
-##API
+## API
 ### fuckwinfsdel(dir, callback)
 ### fuckwinfsdel(dir, opts, callback)
 
-###example
+### example
 ```js
 var del = require('fuckwinfsdel');
 
@@ -42,7 +42,7 @@ del('./dist', function(err, result){
 });
 ```
 opts:`process`,`onFail`.
-###full state example
+### full state example
 ```js
 //or 
 
