@@ -1,4 +1,4 @@
-# fuckwinfsdel
+# fuck win fs del
 No matter how deep the directory, It can be async's delete all.
 ![image](https://github.com/hezedu/SomethingBoring/blob/master/fuckwinfsdel.gif?raw=true)
 
