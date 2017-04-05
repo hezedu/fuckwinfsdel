@@ -1,6 +1,6 @@
 {
   "name": "fuckwinfsdel",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "main": "removeTree",
   "bin": {
     "fuckwinfsdel": "index.js"
@@ -19,7 +19,7 @@
     "name": "hezedu"
   },
   "dependencies": {
-    "sas": "^2.0.13"
+    "sas": "^2.1.0"
   },
   "licenses": "MIT",
   "email": "hezedu@hotmail.com",
