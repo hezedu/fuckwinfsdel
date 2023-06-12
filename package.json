@@ -31,9 +31,5 @@
   "readmeFilename": "README.md",
   "gitHead": "e6adc9f281795a5d225136dd43eef52bcb4ff0c2",
   "homepage": "https://github.com/hezedu/fuckwinfsdel#readme",
-  "_id": "fuckwinfsdel@0.0.3",
-  "scripts": {},
-  "_shasum": "2e696223e1cbcae52aed31b391f87419eb5e2bf0",
-  "_from": "fuckwinfsdel@1.2.1",
-  "_resolved": "http://registry.npm.taobao.org/fuckwinfsdel/download/fuckwinfsdel-1.2.1.tgz"
+  "scripts": {}
 }
